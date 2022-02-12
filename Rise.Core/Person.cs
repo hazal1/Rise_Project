@@ -8,6 +8,9 @@ namespace Rise.Core
 {
     public class Person : BaseEntity
     {
-
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string FirmName { get; set; }
+        public PersonContact PersonContact { get; set; }
     }
 }
