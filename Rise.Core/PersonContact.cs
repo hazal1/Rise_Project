@@ -13,5 +13,7 @@ namespace Rise.Core
         public string Email { get; set; }
         public int PersonId { get; set; }
         public Person Person { get; set; }
+
+        public int CityId { get; set; }
     }
 }

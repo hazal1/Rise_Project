@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Rise.Core
 {
-    public abstract class BaseEntity
+    public class City
     {
         public int Id { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime? UpdateDate { get; set; }
+        public string Name { get; set; }
     }
 }
