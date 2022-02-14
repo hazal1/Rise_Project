@@ -4,6 +4,8 @@ using Rise.Core.DTOs;
 
 namespace Rise.Api.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CustomBaseController : ControllerBase
     {
         [NonAction]

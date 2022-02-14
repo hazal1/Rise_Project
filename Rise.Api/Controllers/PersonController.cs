@@ -7,24 +7,21 @@ using Rise.Core.Services;
 
 namespace Rise.Api.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class PersonController : CustomBaseController
     {
         private readonly IMapper _maper;
-        private readonly IService<Person> _service;
-        private readonly IPersonService personService;
+      
+        private readonly IPersonService _service;
         public PersonController(IMapper maper, IService<Person> service, IPersonService personService)
         {
             _maper = maper;
-            _service = service;
-            this.personService = personService;
+            _service = personService;
         }
 
         [HttpGet("GetPersonWithContact")]
         public async Task<IActionResult> GetPersonWithContact()
         {
-            return CreateActionResult(await personService.GetPersonWithContact());
+            return CreateActionResult(await _service.GetPersonWithContact());
         }
 
         [HttpGet]
