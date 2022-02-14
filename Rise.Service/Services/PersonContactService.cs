@@ -18,9 +18,10 @@ namespace Rise.Service.Services
         private readonly IPersonContactRepository _personContactRepository;
         private readonly IMapper _mapper;
 
-        public PersonContactService(IGenericRepository<PersonContact> repository, IUnitOfWork unitOfWork, IPersonContactRepository personContactRepository) : base(repository, unitOfWork)
+        public PersonContactService(IGenericRepository<PersonContact> repository, IUnitOfWork unitOfWork, IPersonContactRepository personContactRepository, IMapper mapper) : base(repository, unitOfWork)
         {
             _personContactRepository = personContactRepository;
+            _mapper=mapper;
         }
 
         public async Task<CustomResponseDto<ContactWithPersonDto>> GetContactWithPersonAsync(int contactId)

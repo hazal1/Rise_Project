@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Rise.Api.Filters;
 using Rise.Core;
 using Rise.Core.DTOs;
 using Rise.Core.Services;
 
 namespace Rise.Api.Controllers
 {
+    [ValidateFilterAttribute]
     public class PersonController : CustomBaseController
     {
         private readonly IMapper _maper;

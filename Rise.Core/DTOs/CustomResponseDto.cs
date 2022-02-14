@@ -23,13 +23,15 @@ namespace Rise.Core.DTOs
             return new CustomResponseDto<T> { StatusCode = statusCode };
         }
 
-        public static CustomResponseDto<T> Success(int statusCode, List<String> errors)
+        public static CustomResponseDto<T> Fail(int statusCode, List<String> errors)
         {
             return new CustomResponseDto<T> { StatusCode = statusCode, Errors = errors };
         }
-        public static CustomResponseDto<T> Success(int statusCode, string error)
+        public static CustomResponseDto<T> Fail(int statusCode, string error)
         {
             return new CustomResponseDto<T> { StatusCode = statusCode, Errors = new List<string> { error } };
         }
+
+       
     }
 }

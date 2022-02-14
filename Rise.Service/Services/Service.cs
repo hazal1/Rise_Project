@@ -2,6 +2,7 @@
 using Rise.Core.Repositories;
 using Rise.Core.Services;
 using Rise.Core.UnitOfWorks;
+using Rise.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,7 +51,12 @@ namespace Rise.Service.Services
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _repository.GetByIdAsync(id);  
+          var hasPerson=   await _repository.GetByIdAsync(id);
+            if (hasPerson==null)
+            {
+                throw new ClientSideException($"{typeof(T).Name} not found");
+            }
+            return hasPerson;
         }
 
         public async Task RemoveAsync(T entity)
