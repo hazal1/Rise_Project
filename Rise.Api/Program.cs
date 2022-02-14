@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using Microsoft.EntityFrameworkCore;
 using Rise.Core.Repositories;
 using Rise.Core.Services;
@@ -7,13 +8,14 @@ using Rise.Repository.Repositories;
 using Rise.Repository.UnitOfWorks;
 using Rise.Service.Mapping;
 using Rise.Service.Services;
+using Rise.Service.Validation;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddFluentValidation(x=>x.RegisterValidatorsFromAssemblyContaining<PersonDtoValidatior>());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
