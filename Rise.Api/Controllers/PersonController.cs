@@ -13,11 +13,20 @@ namespace Rise.Api.Controllers
     {
         private readonly IMapper _maper;
         private readonly IService<Person> _service;
-        public PersonController(IMapper maper, IService<Person> service)
+        private readonly IPersonService personService;
+        public PersonController(IMapper maper, IService<Person> service, IPersonService personService)
         {
             _maper = maper;
             _service = service;
+            this.personService = personService;
         }
+
+        [HttpGet("GetPersonWithContact")]
+        public async Task<IActionResult> GetPersonWithContact()
+        {
+            return CreateActionResult(await personService.GetPersonWithContact());
+        }
+
         [HttpGet]
         public async Task<IActionResult> All()
         {

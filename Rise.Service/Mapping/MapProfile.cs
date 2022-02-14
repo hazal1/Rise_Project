@@ -17,6 +17,7 @@ namespace Rise.Service.Mapping
             CreateMap<City,CityDto>().ReverseMap();
             CreateMap<PersonContact,PersonContactDto>().ReverseMap();
             CreateMap<PersonUpdateDto, Person>();
+            CreateMap<Person, PersonWithContactDto>();
         }
     }
 }
