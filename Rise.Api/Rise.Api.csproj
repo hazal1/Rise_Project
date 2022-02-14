@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Rise.Service\Rise.Service.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
