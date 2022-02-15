@@ -11,7 +11,6 @@ namespace Rise.Web.Controllers
     {
         
         private readonly PersonApiService _personApiService;
-        private readonly IMapper _mapper;
 
         public PersonController(PersonApiService personApiService)
         {
@@ -64,11 +63,10 @@ namespace Rise.Web.Controllers
             await _personApiService.RemoveAsync(id);
             return RedirectToAction("Index");
         }
-
-     
-        public async Task<IActionResult> GetPersonByIdWithContact(int personId)
+             
+        public async Task<IActionResult> GetSinglePersonByIdContact(int id)
         {
-            return View(await _personApiService.GetSinglePersonByIdContact(personId));
+            return View(await _personApiService.GetSinglePersonByIdContact(id));
         }
     }
 }

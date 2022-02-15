@@ -52,13 +52,10 @@ namespace Rise.Web.Services
             return response.IsSuccessStatusCode;
         }
 
-        public async Task<List<PersonWithContactDto>> GetSinglePersonByIdContact(int personId)
+        public async Task<PersonWithContactDto> GetSinglePersonByIdContact(int personId)
         {
-            var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<List<PersonWithContactDto>>>($"person/GetPersonByIdWithContact/{personId}");
+            var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<PersonWithContactDto>>($"person/GetSinglePersonByIdContact/{personId}");
             return response.Data;
-
         }
-
-       
     }
 }

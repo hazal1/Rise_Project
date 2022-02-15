@@ -22,6 +22,7 @@ namespace Rise.Repository.Repositories
 
         public async Task<Person> GetSinglePersonByIdContact(int personId)
         {
-            return await _context.People.Include(x => x.PersonContacts).Where(x => x.Id == personId).SingleOrDefaultAsync();       }
+            return await _context.People.Include(x => x.PersonContacts).Where(x => x.Id == personId).SingleOrDefaultAsync(); 
+        }
     }
 }

@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model PersonContactDto
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Kişi Ekleme Formu</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="Post" asp-action="Update" asp-controller="PersonContact" id="quickForm">
+                  <input type="hidden" asp-for="Id"/>
+                  <input type="hidden" asp-for="PersonId"/>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input  asp-for="Email" class="form-control"  placeholder="Email">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label asp-for="Phone">Telefon</label>
+                    <input  asp-for="Phone" class="form-control"  placeholder="Telefon">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                  </div>
+                 @*  <div class="form-group">
+                    <label asp-for="CityId">Konum</label>
+                    <select  asp-for="CityId" asp-items="ViewBag.City"  placeholder="Seçiniz"></select>
+                    <span asp-validation-for="CityId" class="text-danger"></span>
+                  </div>*@
+                 
+               
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
+
+

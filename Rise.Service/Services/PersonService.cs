@@ -33,6 +33,7 @@ namespace Rise.Service.Services
         {
             var person = await _personRepository.GetSinglePersonByIdContact(personId);
             var personDto = _mapper.Map<PersonWithContactDto>(person);
+            var aaa= CustomResponseDto<PersonWithContactDto>.Success(200, personDto);
             return CustomResponseDto<PersonWithContactDto>.Success(200, personDto);
 
         }
