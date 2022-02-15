@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model PersonDto
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-12">
+            <!-- jquery validation -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Kişi Ekleme Formu</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="Post" asp-action="Update" asp-controller="Person" id="quickForm">
+                  <input type="hidden" asp-for="Id"/>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label asp-for="Name">İsim</label>
+                    <input  asp-for="Name" class="form-control"  placeholder="İsim">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label asp-for="Surname">Soyisim</label>
+                    <input  asp-for="Surname" class="form-control"  placeholder="Soyisim">
+                    <span asp-validation-for="Surname" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label asp-for="FirmName">Firma Adı</label>
+                    <input  asp-for="FirmName" class="form-control"  placeholder="Firma Adı">
+                    <span asp-validation-for="FirmName" class="text-danger"></span>
+                  </div>
+                 
+               
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+            </div>
+          <!--/.col (left) -->
+          <!-- right column -->
+          <div class="col-md-6">
+
+          </div>
+          <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+
