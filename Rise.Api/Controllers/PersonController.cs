@@ -14,10 +14,17 @@ namespace Rise.Api.Controllers
         private readonly IMapper _maper;
       
         private readonly IPersonService _personService;
+        private IPersonService @object;
+
         public PersonController(IMapper maper, IService<Person> service, IPersonService personService)
         {
             _maper = maper;
             _personService = personService;
+        }
+
+        public PersonController(IPersonService @object)
+        {
+            this.@object = @object;
         }
 
         [HttpGet("GetPersonWithContact")]

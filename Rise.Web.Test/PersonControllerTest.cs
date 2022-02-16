@@ -12,7 +12,10 @@ using System.Threading.Tasks;
 using Xunit;
 
 namespace Rise.Web.Test
-{
+{//*******************************//
+    //Merhaba öncelikle kusura bakmayın bu alan için çünkü ilk defa unittest yapıyorum. Bunun için eğitimde izledim. Ama bu alanı 
+    //test etme kısmını başarılı bir şekilde yapamadım. İncelediğiniz için teşekkür ederim.
+    //*******************************//
     public class PersonControllerTest
     {
         private readonly Mock<PersonApiService> _mockapiservice;
