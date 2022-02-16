@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "ViewPerson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model PersonWithContactDto
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+               
+
+
+                <!-- Main content -->
+                <div class="invoice p-3 mb-3">
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                                <i class="fas fa-person"></i> @Model.Name @Model.Surname, @Model.FirmName
+                            </h4>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- info row -->
+                    <!-- /.row -->
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Email</th>
+                                        <th>Telefon</th>
+                                        <th>Konum</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model.PersonContacts)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Phone</td>
+                                            <td>@ViewBag.Cities[item.CityId].Name</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+
+
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

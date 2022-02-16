@@ -14,8 +14,7 @@ namespace Rise.Web.Services
         public async Task<List<PersonWithContactDto>> GetPersonWithContact()
         {
             var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<List<PersonWithContactDto>>>("person/GetPersonWithContact");
-
-            return response.Data;
+ return response.Data;
         }
 
         public async Task<PersonDto> GetByIdAsync(int id)

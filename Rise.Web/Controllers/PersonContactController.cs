@@ -26,7 +26,6 @@ namespace Rise.Web.Controllers
         public async Task<IActionResult> Save(int id)
         {
             var cities = await _cityApiService.GetAllAsync();
-          
             ViewBag.Cities = new SelectList(cities, "Id", "Name");
             ViewBag.PersonId = id;
             return View();

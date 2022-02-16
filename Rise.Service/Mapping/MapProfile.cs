@@ -20,7 +20,6 @@ namespace Rise.Service.Mapping
             CreateMap<Person, PersonWithContactDto>();
             CreateMap<PersonContact, PersonWithContactDto>();
             CreateMap<PersonContact, ContactWithPersonDto>();
-            CreateMap<PersonContact, denemedto>();
             CreateMap<ContactWithPersonDto, PersonContact>();
          
         }

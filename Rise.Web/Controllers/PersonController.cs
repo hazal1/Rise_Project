@@ -11,11 +11,12 @@ namespace Rise.Web.Controllers
     {
         
         private readonly PersonApiService _personApiService;
+        private readonly CityApiService _cityApiService;
 
-        public PersonController(PersonApiService personApiService)
+        public PersonController(PersonApiService personApiService, CityApiService cityApiService)
         {
             _personApiService = personApiService;
-            
+            _cityApiService = cityApiService;
             
         }
         public async Task<IActionResult> Index()
@@ -66,6 +67,13 @@ namespace Rise.Web.Controllers
              
         public async Task<IActionResult> GetSinglePersonByIdContact(int id)
         {
+            ViewBag.Cities = await _cityApiService.GetAllAsync();
+
+            return View(await _personApiService.GetSinglePersonByIdContact(id));
+        }
+        public async Task<IActionResult> ViewPerson(int id)
+        {
+            ViewBag.Cities = await _cityApiService.GetAllAsync();
             return View(await _personApiService.GetSinglePersonByIdContact(id));
         }
     }
