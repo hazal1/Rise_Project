@@ -73,7 +73,7 @@ namespace Rise.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
             var person = await _personService.GetAllAsync();
             var personDto = _maper.Map<List<PersonDto>>(person.ToList());

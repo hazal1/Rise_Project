@@ -10,5 +10,6 @@ namespace Rise.Core.Services
     public interface IPersonContactService : IService<PersonContact>
     {
         public Task<CustomResponseDto<ContactWithPersonDto>> GetContactWithPersonAsync(int contactId);
+        Task<CustomResponseDto<List<ContactWithPersonDto>>> GetAllContactWithAllPerson();
     }
 }

@@ -15,6 +15,11 @@ namespace Rise.Repository.Repositories
         {
         }
 
+        public async Task<List<PersonContact>> GetAllContactWithAllPerson()
+        {
+            return await _context.PersonContacts.Include(x => x.Person).Include(x=>x.City).ToListAsync();
+        }
+       
         public async Task<PersonContact> GetContactByIdPerson(int contactId)
         {
             return await _context.PersonContacts.Include(x => x.Person).Where(x => x.Id == contactId).SingleOrDefaultAsync();

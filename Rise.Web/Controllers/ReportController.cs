@@ -15,11 +15,11 @@ namespace Rise.Web.Controllers
      
         public async Task<IActionResult> ContactReport()
         {
-            return View(await _personContactApiService.GetAllAsync());
+            return View(await _personContactApiService.GetAllContactWithAllPerson());
         }
         public async Task<IActionResult> PersonReport()
         {
-            return View(await _personApiService.GetAllAsync());
+            return View(await _personApiService.GetPersonWithContact());
         }
     }
 }

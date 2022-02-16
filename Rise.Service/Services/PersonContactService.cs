@@ -24,6 +24,13 @@ namespace Rise.Service.Services
             _mapper=mapper;
         }
 
+        public async Task<CustomResponseDto<List<ContactWithPersonDto>>> GetAllContactWithAllPerson()
+        {
+            var personcnt = await _personContactRepository.GetAllContactWithAllPerson();
+            var personcntsDto = _mapper.Map<List<ContactWithPersonDto>>(personcnt);
+            return CustomResponseDto<List<ContactWithPersonDto>>.Success(200, personcntsDto);
+        }
+     
         public async Task<CustomResponseDto<ContactWithPersonDto>> GetContactWithPersonAsync(int contactId)
         {
             var contact = await _personContactRepository.GetContactByIdPerson(contactId);

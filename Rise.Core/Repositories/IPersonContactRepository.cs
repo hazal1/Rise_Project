@@ -9,5 +9,6 @@ namespace Rise.Core.Repositories
     public interface IPersonContactRepository:IGenericRepository<PersonContact>
     {
         Task<PersonContact> GetContactByIdPerson(int contactId);
+        Task<List<PersonContact>> GetAllContactWithAllPerson();
     }
 }

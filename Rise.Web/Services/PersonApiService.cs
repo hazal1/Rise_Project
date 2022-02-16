@@ -60,6 +60,7 @@ namespace Rise.Web.Services
         public async Task<List<PersonDto>> GetAllAsync()
         {
             var response = await _httpClient.GetFromJsonAsync<CustomResponseDto<List<PersonDto>>>("person");
+
             return response.Data;
         }
     }

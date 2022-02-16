@@ -50,10 +50,10 @@ namespace Rise.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllContactWithAllPerson()
         {
-            var personcontact = await _personContactService.GetAllAsync();
-            var personcontactsDto = _mapper.Map<List<ContactWithPersonDto>>(personcontact.ToList());
+            var personcontact = await _personContactService.GetAllContactWithAllPerson();
+            var personcontactsDto = _mapper.Map<List<ContactWithPersonDto>>(personcontact);
             return CreateActionResult(CustomResponseDto<List<ContactWithPersonDto>>.Success(200, personcontactsDto));
         }
 
