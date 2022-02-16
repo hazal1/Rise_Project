@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rise.Core.DTOs
+namespace Rise.Core.Services
 {
-    public class CityDto
+    public interface ICityService : IService<City>
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace Rise.Repository
         }
 
         public DbSet<Person> People { get; set; }
+        public DbSet<City> Cities { get; set; }
         public DbSet<PersonContact> PersonContacts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

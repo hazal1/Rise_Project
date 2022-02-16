@@ -37,7 +37,6 @@ namespace Rise.Web.Services
 
             return responseBody.Data;
 
-
         }
         public async Task<bool> UpdateAsync(PersonDto newPerson)
         {

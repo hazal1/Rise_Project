@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Rise.Core.DTOs;
 using Rise.Web.Services;
 
@@ -8,11 +9,13 @@ namespace Rise.Web.Controllers
     {
         private readonly PersonContactApiService _personContactApiService;
         private readonly PersonApiService _personApiService;
+        private readonly CityApiService _cityApiService;
 
-        public PersonContactController(PersonContactApiService personContactApiService, PersonApiService personApiService)
+        public PersonContactController(PersonContactApiService personContactApiService, PersonApiService personApiService, CityApiService cityApiService)
         {
             _personContactApiService = personContactApiService;
             _personApiService = personApiService;
+            _cityApiService = cityApiService;
 
         }
         public async Task<IActionResult> Index(int personId)
@@ -20,8 +23,12 @@ namespace Rise.Web.Controllers
             return View(await _personApiService.GetSinglePersonByIdContact(personId));
         }
 
-        public async Task<IActionResult> Save()
+        public async Task<IActionResult> Save(int id)
         {
+            var cities = await _cityApiService.GetAllAsync();
+          
+            ViewBag.Cities = new SelectList(cities, "Id", "Name");
+            ViewBag.PersonId = id;
             return View();
         }
         [HttpPost]
@@ -30,10 +37,14 @@ namespace Rise.Web.Controllers
 
             if (ModelState.IsValid)
             {
+                personContactDto.Id = 0;//hata anlaşılamadığı için geçici çözüm olarak eklendi.
                 await _personContactApiService.SaveAsync(personContactDto);
                 return RedirectToAction("Index");
 
             }
+            var cities= await _cityApiService.GetAllAsync();
+            ViewBag.Cities = new SelectList(cities, "Id", "Name");
+
             return View();
 
         }

@@ -47,7 +47,8 @@ namespace Rise.Service.Services
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return await _repository.GetAll().ToListAsync();        }
+            return await _repository.GetAll().ToListAsync();
+        }
 
         public async Task<T> GetByIdAsync(int id)
         {

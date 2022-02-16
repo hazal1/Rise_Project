@@ -19,7 +19,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form method="Post" asp-action="Save" asp-controller="PersonContact" id="quickForm">
-                  <input type="hidden" asp-for="PersonId"/>
+                  <input  asp-for="PersonId" value="@ViewBag.PersonId"/>
                 <div class="card-body">
                   <div class="form-group">
                     <label asp-for="Email">Email</label>
@@ -33,10 +33,16 @@
                   </div>
                  @*  <div class="form-group">
                     <label asp-for="CityId">Konum</label>
-                    <select  asp-for="CityId" asp-items="ViewBag.City"  placeholder="Seçiniz"></select>
+                    <select  asp-for="CityId" asp-items="ViewBag.Cities"  placeholder="Seçiniz"></select>
                     <span asp-validation-for="CityId" class="text-danger"></span>
-                  </div>*@
-                 
+                  </div>
+                 *@
+                   <div class="form-group">
+                <label asp-for="CityId"></label>
+                <select asp-for="CityId" asp-items="ViewBag.Cities" class="form-control" ></select>
+               
+            </div>
+
                
                 </div>
                 <!-- /.card-body -->
