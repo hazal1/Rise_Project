@@ -74,6 +74,5 @@ namespace Rise.Web.Controllers
             return RedirectToAction("GetSinglePersonByIdContact",personId);
         }
 
-
     }
 }

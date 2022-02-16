@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rise.Core.DTOs
 {
-    public class ContactWithPersonDto:PersonContactDto
+    internal class ContactReportDto
     {
-        public PersonDto Person { get; set; }
-        public CityDto City { get; set; }
     }
 }
