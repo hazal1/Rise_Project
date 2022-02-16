@@ -72,12 +72,6 @@ namespace Rise.Api.Controllers
             return CreateActionResult(await _personService.GetSinglePersonByIdContact(personId));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAllAsync()
-        {
-            var person = await _personService.GetAllAsync();
-            var personDto = _maper.Map<List<PersonDto>>(person.ToList());
-            return CreateActionResult(CustomResponseDto<List<PersonDto>>.Success(200, personDto));
-        }
+     
     }
 }

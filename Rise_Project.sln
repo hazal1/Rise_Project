@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rise.Api", "Rise.Api\Rise.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rise.Web", "Rise.Web\Rise.Web.csproj", "{67F6F234-D54D-4C94-9BA2-5212888D714C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise.Test", "Rise.Test\Rise.Test.csproj", "{52A857CD-3E6E-48E7-B642-CD1272B122AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rise.Web.Test", "Rise.Web.Test\Rise.Web.Test.csproj", "{E6F19AAC-6E18-4CFC-82E0-A44B42AF0D09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{67F6F234-D54D-4C94-9BA2-5212888D714C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67F6F234-D54D-4C94-9BA2-5212888D714C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67F6F234-D54D-4C94-9BA2-5212888D714C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52A857CD-3E6E-48E7-B642-CD1272B122AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52A857CD-3E6E-48E7-B642-CD1272B122AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52A857CD-3E6E-48E7-B642-CD1272B122AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52A857CD-3E6E-48E7-B642-CD1272B122AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6F19AAC-6E18-4CFC-82E0-A44B42AF0D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F19AAC-6E18-4CFC-82E0-A44B42AF0D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F19AAC-6E18-4CFC-82E0-A44B42AF0D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F19AAC-6E18-4CFC-82E0-A44B42AF0D09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
