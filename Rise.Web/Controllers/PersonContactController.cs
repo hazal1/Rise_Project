@@ -63,13 +63,15 @@ namespace Rise.Web.Controllers
                 await _personContactApiService.UpdateAsync(personContactDto);
                 return RedirectToAction("Index");
             }
+            var cities = await _cityApiService.GetAllAsync();
+            ViewBag.Cities = new SelectList(cities, "Id", "Name");
             return View(personContactDto);
         }
 
-        public async Task<IActionResult> Remove(int id)
+        public async Task<IActionResult> Remove(int id, int personId)
         {
             await _personContactApiService.RemoveAsync(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("GetSinglePersonByIdContact",personId);
         }
 
 

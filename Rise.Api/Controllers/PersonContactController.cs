@@ -32,21 +32,21 @@ namespace Rise.Api.Controllers
             return CreateActionResult(CustomResponseDto<PersonContact>.Success(201, ContactDtoo));
         }
 
-        //[HttpPut]
-        //public async Task<IActionResult> Update(PersonUpdateDto personUpdateDto)
-        //{
-        //    await _personService.UpdateAsync(_maper.Map<Person>(personUpdateDto));
-        //    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
-        //}
+        [HttpPut]
+        public async Task<IActionResult> Update(PersonContactDto personContactDto)
+        {
+            await _personContactService.UpdateAsync(_mapper.Map<PersonContact>(personContactDto));
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        }
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Remove(int id)
-        //{
-        //    var person = await _personService.GetByIdAsync(id);
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+            var contact = await _personContactService.GetByIdAsync(id);
 
-        //    await _personService.RemoveAsync(person);
-        //    return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
-        //}
+            await _personContactService.RemoveAsync(contact);
+            return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
+        }
 
     }
 }

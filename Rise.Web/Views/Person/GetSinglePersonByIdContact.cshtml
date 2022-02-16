@@ -6,16 +6,13 @@
 
 
 @model PersonWithContactDto
-<h1>Kişi Bilgileri</h1>
-
-
 
 
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">İletişim Bilgisi Listesi</h3>
+                <h3 class="card-title">@Model.Name @Model.Surname Kişisine ait iletişim Listesi</h3>
 
                 <div class="card-tools">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -49,8 +46,7 @@
                                 <td>@item.Phone</td>
                                 <td>@item.CityId</td>
                                 <td> 
-                                    <a class="btn btn-success" asp-controller="Person" asp-action="Update" asp-route-id="@item.Id"><i class="fa fa-edit"></i></a>
-                                    <a class="btn btn-danger" asp-controller="Person" asp-action="Remove" asp-route-id="@item.Id"><i class="fa fa-trash-alt"></i></a>
+                                    <a class="btn btn-danger" asp-controller="PersonContact" asp-action="Remove" asp-route-id="@item.Id"><i class="fa fa-trash-alt"></i>Sil</a>
                                 </td>
                             </tr>
                         }

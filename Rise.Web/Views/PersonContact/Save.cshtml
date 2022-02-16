@@ -19,7 +19,7 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form method="Post" asp-action="Save" asp-controller="PersonContact" id="quickForm">
-                  <input  asp-for="PersonId" value="@ViewBag.PersonId"/>
+                  <input type="hidden" asp-for="PersonId" value="@ViewBag.PersonId"/>
                 <div class="card-body">
                   <div class="form-group">
                     <label asp-for="Email">Email</label>
